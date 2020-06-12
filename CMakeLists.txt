@@ -10,6 +10,7 @@ file(GLOB FBPANEL_SOURCES
 )
 
 add_executable(fbpanel ${FBPANEL_SOURCES})
+target_compile_options(fbpanel PRIVATE -MMD)
 set_target_properties(fbpanel PROPERTIES LINKER_LANGUAGE C)
 
 find_package(X11 REQUIRED)
@@ -27,6 +28,7 @@ target_link_libraries(fbpanel
         -lm
         ${X11_LIBRARIES}
         ${MODULES_LIBRARIES}
+        -Wl,--export-dynamic
 )
 target_include_directories(fbpanel
     SYSTEM PRIVATE
@@ -51,12 +53,15 @@ foreach(PLUGIN ${PLUGINS})
     )
     target_link_libraries(${PLUGIN}
         PRIVATE
+            ${X11_LIBRARIES}
             ${MODULES_LIBRARIES}
     )
     target_include_directories(${PLUGIN}
         SYSTEM PRIVATE
             ${MODULES_INCLUDE_DIRS}
     )
+    target_compile_definitions(${PLUGIN} PUBLIC PLUGIN)
+    target_compile_options    (${PLUGIN} PUBLIC -pthread -MMD)
 
 endforeach()
 
