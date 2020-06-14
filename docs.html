@@ -3,7 +3,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="my.css" type="text/css"/>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
   <title>fbpanel</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 </head>
@@ -25,17 +25,13 @@
    <tr><td><a href="plugins.html">Plugins</a></td></tr>
    <tr><td><a href="shots.html">Screenshots</a></td></tr>
    <tr><td><a href="docs.html">Docs</a></td></tr>
-   <tr><td><a href="http://sourceforge.net/project/showfiles.php?group_id=66031">Download</a></td></tr>
-   <tr><td><a href="http://sourceforge.net/projects/fbpanel/">Development</a></td></tr>
+   <tr><td><a href="https://github.com/eleksir/fbpanel/releases">Download</a></td></tr>
+   <tr><td><a href="https://github.com/eleksir/fbpanel/commits/master">Development</a></td></tr>
    <tr><td> &nbsp;</td></tr>
-   <tr><td><a href="http://sourceforge.net">
-           <img class="logo" src="http://sourceforge.net/sflogo.php?group_id=66031&amp;type=1" 
-                height="31" width="88" alt="SourceForge.net Logo"/></a>
+   <tr><td><a href="https://github.com">
+           <img class="logo" src="https://avatars1.githubusercontent.com/u/9919?s=200&v=4"
+                height="33" width="33" alt="github.com Logo"/></a>
        </td></tr>
-   <tr><td><a href="http://sourceforge.net/donate/index.php?group_id=66031">
-           <img class="logo" src="http://images.sourceforge.net/images/project-support.jpg" 
-                height="31" width="88" alt="Support This Project"/> </a>
-        </td></tr>
    </tbody>
 
 </table>
@@ -68,7 +64,8 @@ The following is what you will need to compile fbpanel:
   <ul>
     <li><a href="http://www.gtk.org">GTK+-2.4</a> headers and libraries
         (development package)</li>
-  
+    <li><a href="https://cmake.org/">cmake3.5+</a> to prepare and compile
+        fbpanel</li>
   </ul>
 
 
@@ -79,9 +76,10 @@ fbpanel.
 
 
 <pre>
-% <b>tar zxvf fbpanel-x.y.tgz</b>     #...untar the fbpanel archive 
+% <b>tar zxvf fbpanel-x.y.tar.gz</b>  #...untar the fbpanel archive 
 % <b>cd fbpanel-x.y</b>               #...cd inside the source tree
-% <b>./configure</b>                  #...prepare source for compiling
+% <b>mkdir build && cd build</b>      #...create build dir
+% <b>cmake ..</b>                     #...prepare source for compiling
 % <b>make</b>                         #...fbpanel builds...
 % <b>su</b>                           #...become root
 % <b>make install</b>                 #...do install
@@ -574,6 +572,6 @@ plugin {
 </tr>
 </tbody>
 </table>
-<div>Updated on 28-02-2014</div>
+<div>Updated on 14-06-2020</div>
 
 </body></html>

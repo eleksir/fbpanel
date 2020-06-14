@@ -19,7 +19,8 @@ The following is what you will need to compile fbpanel:
   <ul>
     <li><a href="http://www.gtk.org">GTK+-2.4</a> headers and libraries
         (development package)</li>
-  
+    <li><a href="https://cmake.org/">cmake3.5+</a> to prepare and compile
+        fbpanel</li>
   </ul>
 
 
@@ -30,9 +31,10 @@ fbpanel.
 
 
 <pre>
-% <b>tar zxvf fbpanel-x.y.tgz</b>     #...untar the fbpanel archive 
+% <b>tar zxvf fbpanel-x.y.tar.gz</b>  #...untar the fbpanel archive 
 % <b>cd fbpanel-x.y</b>               #...cd inside the source tree
-% <b>./configure</b>                  #...prepare source for compiling
+% <b>mkdir build && cd build</b>      #...create build dir
+% <b>cmake ..</b>                     #...prepare source for compiling
 % <b>make</b>                         #...fbpanel builds...
 % <b>su</b>                           #...become root
 % <b>make install</b>                 #...do install
